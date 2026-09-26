@@ -1,7 +1,7 @@
 {
   "name": "StreamPlay Full Suite (Phisher MultiAPI)",
-  "version": "2.0.0",
-  "description": "Full StreamPlay MultiAPI Provider Suite ported to Nuvio (66 Multi-Scrapers: Movies, Series, Anime, Asian Drama, Cartoons, 4K & Torrents)",
+  "version": "2.676",
+  "description": "StreamPlay MultiAPI ported to Nuvio - Synced with Phisher v676 build",
   "author": "Phisher98 & Hexated",
   "icon": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
   "scrapers": [
