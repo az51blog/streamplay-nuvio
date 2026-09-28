@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/moviesmod/index.js
-var import_cheerio_without_node_native2 = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/moviesmod/constants.js
 var DOMAINS_URL = "https://raw.githubusercontent.com/phisher98/TVVVV/refs/heads/main/domains.json";
@@ -80,7 +80,7 @@ var HEADERS = {
 };
 
 // src/moviesmod/utils.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 var cachedDomain = "";
 function getMainUrl() {
   return __async(this, null, function* () {
@@ -121,7 +121,7 @@ function bypassHrefli(url) {
     try {
       const res1 = yield fetch(url, { headers: HEADERS });
       const html1 = yield res1.text();
-      const $1 = import_cheerio_without_node_native.default.load(html1);
+      const $1 = cheerio.load(html1);
       const formUrl1 = $1("form#landing").attr("action");
       const formData1 = {};
       $1("form#landing input").each((_, el) => {
@@ -133,7 +133,7 @@ function bypassHrefli(url) {
         body: new URLSearchParams(formData1).toString()
       });
       const html2 = yield res2.text();
-      const $2 = import_cheerio_without_node_native.default.load(html2);
+      const $2 = cheerio.load(html2);
       const formUrl2 = $2("form#landing").attr("action");
       const formData2 = {};
       $2("form#landing input").each((_, el) => {
@@ -145,7 +145,7 @@ function bypassHrefli(url) {
         body: new URLSearchParams(formData2).toString()
       });
       const html3 = yield res3.text();
-      const $3 = import_cheerio_without_node_native.default.load(html3);
+      const $3 = cheerio.load(html3);
       const script = $3("script:contains(?go=)").html() || "";
       const skTokenMatch = script.match(/\?go=([^"]+)/);
       if (!skTokenMatch)
@@ -156,7 +156,7 @@ function bypassHrefli(url) {
         headers: __spreadProps(__spreadValues({}, HEADERS), { "Cookie": `${skToken}=${wpHttp2}` })
       });
       const html4 = yield res4.text();
-      const $4 = import_cheerio_without_node_native.default.load(html4);
+      const $4 = cheerio.load(html4);
       const metaRefresh = $4('meta[http-equiv="refresh"]').attr("content") || "";
       const driveUrlMatch = metaRefresh.match(/url=(.+)/);
       if (!driveUrlMatch)
@@ -291,7 +291,7 @@ function CFType1(url) {
       const wfileUrl = url.replace("/file", "/wfile") + "?type=1";
       const res = yield fetch(wfileUrl, { headers: HEADERS });
       const html = yield res.text();
-      const $ = import_cheerio_without_node_native.default.load(html);
+      const $ = cheerio.load(html);
       const links = [];
       $("a.btn-success").each((_, el) => {
         const h = $(el).attr("href");
@@ -326,7 +326,7 @@ function resumeCloudLink(url) {
           return data.url.replace(/\\\//g, "/");
         }
       }
-      const $ = import_cheerio_without_node_native.default.load(html);
+      const $ = cheerio.load(html);
       return $("a.btn-success").first().attr("href") || null;
     } catch (e) {
       return null;
@@ -348,7 +348,7 @@ function extractDriveseedPage(url) {
       }
       const res = yield fetch(pageUrl, { headers: HEADERS });
       const html = yield res.text();
-      const $ = import_cheerio_without_node_native.default.load(html);
+      const $ = cheerio.load(html);
       const baseDomain = getBaseUrl(pageUrl);
       const nameText = $("li.list-group-item:contains(Name)").first().text() || "";
       const sizeText = $("li.list-group-item:contains(Size)").first().text() || $("li:nth-child(3)").text() || "";
@@ -401,13 +401,13 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
       console.log(`[MoviesMod] Searching at: ${searchUrl}`);
       const searchRes = yield fetch(searchUrl, { headers: __spreadProps(__spreadValues({}, HEADERS), { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }), cfKiller: true });
       const searchHtml = yield searchRes.text();
-      const $search = import_cheerio_without_node_native2.default.load(searchHtml);
+      const $search = cheerio.load(searchHtml);
       let targetUrl = $search("#content_box article > a").first().attr("href") || $search("#content_box article a").first().attr("href");
       if (!targetUrl && details.imdbId && details.title) {
         const fallbackQuery = mediaType === "movie" ? `${mainUrl.replace(/\/$/, "")}/search/${encodeURIComponent(details.title)}` : `${mainUrl.replace(/\/$/, "")}/search/${encodeURIComponent(details.title)} ${seasonNum}`;
         const fallbackRes = yield fetch(fallbackQuery, { headers: __spreadProps(__spreadValues({}, HEADERS), { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }), cfKiller: true });
         const fallbackHtml = yield fallbackRes.text();
-        const $fallback = import_cheerio_without_node_native2.default.load(fallbackHtml);
+        const $fallback = cheerio.load(fallbackHtml);
         targetUrl = $fallback("#content_box article > a").first().attr("href") || $fallback("#content_box article a").first().attr("href");
       }
       if (!targetUrl) {
@@ -416,7 +416,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
       }
       const pageRes = yield fetch(targetUrl, { headers: __spreadProps(__spreadValues({}, HEADERS), { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" }), cfKiller: true });
       const pageHtml = yield pageRes.text();
-      const $ = import_cheerio_without_node_native2.default.load(pageHtml);
+      const $ = cheerio.load(pageHtml);
       const allStreams = [];
       const contentBox = $(".thecontent");
       const hTag = mediaType === "movie" ? "h4" : "h3";
@@ -454,7 +454,7 @@ function processModLink(url, referer, quality, mediaType, episodeNum) {
     try {
       const res = yield fetch(url, { headers: __spreadProps(__spreadValues({}, HEADERS), { Referer: referer }) });
       const html = yield res.text();
-      const $ = import_cheerio_without_node_native2.default.load(html);
+      const $ = cheerio.load(html);
       const selector = mediaType === "movie" ? "p a.maxbutton, a:contains('Download')" : `h3 a:contains('Episode ${episodeNum}'), a:contains('Episode ${episodeNum}'), a.maxbutton`;
       let source = $(selector).first().attr("href");
       if (!source) {

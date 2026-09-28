@@ -1,7 +1,7 @@
 {
   "name": "StreamPlay Full Suite (Phisher MultiAPI)",
-  "version": "2.676",
-  "description": "StreamPlay MultiAPI ported to Nuvio - Synced with Phisher v676 build",
+  "version": "2.679",
+  "description": "StreamPlay MultiAPI ported to Nuvio - Synced with Phisher v679 build",
   "author": "Phisher98 & Hexated",
   "icon": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
   "scrapers": [
@@ -1534,6 +1534,98 @@
       "logo": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
       "contentLanguage": [
         "en"
+      ]
+    },
+    {
+      "id": "cineby",
+      "name": "StreamPlay - Cineby",
+      "description": "Cineby - High speed Multi-CDN 4K/1080p stream provider",
+      "version": "1.0.0",
+      "author": "Phisher98",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/cineby.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
+      "contentLanguage": [
+        "en",
+        "multi"
+      ]
+    },
+    {
+      "id": "dahmermovies-4k",
+      "name": "StreamPlay - DahmerMovies 4K",
+      "description": "DahmerMovies 4K UHD Ultra High Definition Releases",
+      "version": "1.0.0",
+      "author": "Phisher98",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/dahmermovies-4k.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "logo": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
+      "contentLanguage": [
+        "en",
+        "hi"
+      ]
+    },
+    {
+      "id": "hdmovie2",
+      "name": "StreamPlay - Hdmovie2 (Ultra Stream V3)",
+      "description": "Hdmovie2 Ultra Stream V3 fast direct multi-server engine",
+      "version": "1.0.0",
+      "author": "Phisher98",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/hdmovie2.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
+      "contentLanguage": [
+        "en",
+        "hi"
+      ]
+    },
+    {
+      "id": "multimovies",
+      "name": "StreamPlay - MultiMovies",
+      "description": "MultiMovies - Streaming movies and series with multiple mirrors",
+      "version": "1.0.0",
+      "author": "Phisher98",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/multimovies.js",
+      "enabled": true,
+      "hasSettings": true,
+      "formats": [
+        "m3u8",
+        "mp4"
+      ],
+      "logo": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
+      "contentLanguage": [
+        "en",
+        "multi"
       ]
     }
   ]

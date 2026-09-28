@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/reanime/reanime.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/reanime/constants.js
 var REANIME_DOMAINS = [

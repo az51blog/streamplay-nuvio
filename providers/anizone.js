@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/anizone/index.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/anizone/constants.js
 var MAIN_URL = "https://anizone.to";
@@ -613,7 +613,7 @@ function searchCards(query) {
     const searchHtml = yield fetchText(searchUrl);
     if (!searchHtml)
       return [];
-    const $search = import_cheerio_without_node_native.default.load(searchHtml);
+    const $search = cheerio.load(searchHtml);
     return parseCards(searchHtml, $search);
   });
 }
@@ -702,7 +702,7 @@ function getStreams(tmdbId, mediaType = "tv", season = 1, episode = 1) {
         return [];
       }
       const epHtml = epResponse.text;
-      const $ep = import_cheerio_without_node_native.default.load(epHtml);
+      const $ep = cheerio.load(epHtml);
       const streams = [];
       const defaultStream = parseVidstackFromHtml(epHtml, $ep);
       const serverButtons = $ep('button[wire\\:click*="setVideo"]');
@@ -770,7 +770,7 @@ function getStreams(tmdbId, mediaType = "tv", season = 1, episode = 1) {
                 const postData = yield postRes.json();
                 const liveHtml = (_c = (_b = (_a = postData.components) == null ? void 0 : _a[0]) == null ? void 0 : _b.effects) == null ? void 0 : _c.html;
                 if (liveHtml) {
-                  const $live = import_cheerio_without_node_native.default.load(liveHtml);
+                  const $live = cheerio.load(liveHtml);
                   const extraStream = parseVidstackFromHtml(liveHtml, $live);
                   if (extraStream.masterUrl && extraStream.masterUrl !== defaultStream.masterUrl) {
                     streams.push({

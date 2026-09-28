@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/moviesdrive/index.js
-var import_cheerio_without_node_native2 = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/moviesdrive/constants.js
 var MAIN_URL = "https://new4.moviesdrive.christmas";
@@ -77,7 +77,7 @@ var HEADERS = {
 };
 
 // src/moviesdrive/utils.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 var cachedMainUrl = "";
 function getMainUrl() {
   return __async(this, null, function* () {
@@ -134,7 +134,7 @@ function extractMdrive(url) {
           }
         }
       }
-      const $ = import_cheerio_without_node_native.default.load(html);
+      const $ = cheerio.load(html);
       return $("a[href]").map((i, el) => $(el).attr("href")).get().filter((href) => regex.test(href));
     } catch (e) {
       return [];
@@ -152,7 +152,7 @@ function hubCloudExtractor(url, referer) {
       let finalUrl = currentUrl;
       if (!currentUrl.includes("hubcloud.php")) {
         let nextHref = "";
-        const $first = import_cheerio_without_node_native.default.load(pageData);
+        const $first = cheerio.load(pageData);
         const phpLink = $first('a[href*="hubcloud.php"]').attr("href");
         if (phpLink) {
           nextHref = phpLink;
@@ -178,7 +178,7 @@ function hubCloudExtractor(url, referer) {
           pageData = yield secondResponse.text();
         }
       }
-      const $ = import_cheerio_without_node_native.default.load(pageData);
+      const $ = cheerio.load(pageData);
       const size = $("i#size").text().trim();
       const header = $("div.card-header").text().trim();
       const quality = getIndexQuality(header);
@@ -363,7 +363,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
     try {
       const pageRes = yield fetch(href, { headers: HEADERS });
       const pageHtml = yield pageRes.text();
-      const $ = import_cheerio_without_node_native2.default.load(pageHtml);
+      const $ = cheerio.load(pageHtml);
       const allStreams = [];
       if (mediaType === "movie") {
         const links = [];
@@ -394,7 +394,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
             continue;
           const epPageRes = yield fetch(nextHref, { headers: HEADERS });
           const epPageHtml = yield epPageRes.text();
-          const $ep = import_cheerio_without_node_native2.default.load(epPageHtml);
+          const $ep = cheerio.load(epPageHtml);
           const epEntries = $ep("h5").filter((i, el) => sepRegex.test($ep(el).text()));
           for (const epEntry of epEntries.get()) {
             const epLinks = [];

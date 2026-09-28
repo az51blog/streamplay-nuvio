@@ -1,1 +1,185 @@
-const _0x1f1144=_0xff43;(function(_0x4fea81,_0x3d86a7){const _0x1255a4=_0xff43,_0xbcc103=_0x4fea81();while(!![]){try{const _0x10c47d=-parseInt(_0x1255a4(0x18b))/0x1*(parseInt(_0x1255a4(0x1a0))/0x2)+parseInt(_0x1255a4(0x1b2))/0x3+parseInt(_0x1255a4(0x1aa))/0x4*(parseInt(_0x1255a4(0x185))/0x5)+-parseInt(_0x1255a4(0x1a4))/0x6*(parseInt(_0x1255a4(0x186))/0x7)+parseInt(_0x1255a4(0x19f))/0x8*(-parseInt(_0x1255a4(0x1c0))/0x9)+-parseInt(_0x1255a4(0x193))/0xa+-parseInt(_0x1255a4(0x1b0))/0xb*(-parseInt(_0x1255a4(0x1a9))/0xc);if(_0x10c47d===_0x3d86a7)break;else _0xbcc103['push'](_0xbcc103['shift']());}catch(_0x3098d1){_0xbcc103['push'](_0xbcc103['shift']());}}}(_0x3a2e,0x5b2e9));function _0xff43(_0x48c63d,_0x121d02){_0x48c63d=_0x48c63d-0x184;const _0x3a2e91=_0x3a2e();let _0xff431d=_0x3a2e91[_0x48c63d];if(_0xff43['iQeXKc']===undefined){var _0x1905f7=function(_0x4fbe74){const _0x519ed9='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3a0565='',_0x22fa3f='';for(let _0x1ffd4e=0x0,_0x4bc82d,_0x4be4a1,_0x47085d=0x0;_0x4be4a1=_0x4fbe74['charAt'](_0x47085d++);~_0x4be4a1&&(_0x4bc82d=_0x1ffd4e%0x4?_0x4bc82d*0x40+_0x4be4a1:_0x4be4a1,_0x1ffd4e++%0x4)?_0x3a0565+=String['fromCharCode'](0xff&_0x4bc82d>>(-0x2*_0x1ffd4e&0x6)):0x0){_0x4be4a1=_0x519ed9['indexOf'](_0x4be4a1);}for(let _0x53d322=0x0,_0x2013fe=_0x3a0565['length'];_0x53d322<_0x2013fe;_0x53d322++){_0x22fa3f+='%'+('00'+_0x3a0565['charCodeAt'](_0x53d322)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x22fa3f);};_0xff43['xUqcgE']=_0x1905f7,_0xff43['UuRiaX']={},_0xff43['iQeXKc']=!![];}const _0xa990c3=_0x3a2e91[0x0],_0x31be79=_0x48c63d+_0xa990c3,_0xe44b63=_0xff43['UuRiaX'][_0x31be79];return!_0xe44b63?(_0xff431d=_0xff43['xUqcgE'](_0xff431d),_0xff43['UuRiaX'][_0x31be79]=_0xff431d):_0xff431d=_0xe44b63,_0xff431d;}var __async=(_0x3a0565,_0x22fa3f,_0x1ffd4e)=>{return new Promise((_0x4bc82d,_0x4be4a1)=>{const _0x1794e4=_0xff43;var _0x47085d=_0x131a02=>{const _0x1b37b3=_0xff43;try{_0x2013fe(_0x1ffd4e[_0x1b37b3(0x195)](_0x131a02));}catch(_0x51287a){_0x4be4a1(_0x51287a);}},_0x53d322=_0x3a8c51=>{try{_0x2013fe(_0x1ffd4e['throw'](_0x3a8c51));}catch(_0x34921d){_0x4be4a1(_0x34921d);}},_0x2013fe=_0x551158=>_0x551158[_0x1794e4(0x197)]?_0x4bc82d(_0x551158[_0x1794e4(0x1c8)]):Promise[_0x1794e4(0x18f)](_0x551158[_0x1794e4(0x1c8)])[_0x1794e4(0x19b)](_0x47085d,_0x53d322);_0x2013fe((_0x1ffd4e=_0x1ffd4e[_0x1794e4(0x1a6)](_0x3a0565,_0x22fa3f))[_0x1794e4(0x195)]());});},XPASS_API='https://play.xpass.top',BASE_HEADERS={'User-Agent':_0x1f1144(0x1ba),'Referer':XPASS_API+'/'};function _0x3a2e(){const _0x2f1ecc=['w1HWyxnZxsbgB3vUzca','zg9Uzq','w1HWyxnZxsboyxzPz2f0Aw5NihrVievTyMvKoIa','CgfYC2u','DMfYigjHy2T1ChnCCYO9xhmQkfXBlIO/xf0PxhmQkd86o3W8xc9Zy3jPChq+kq','DgHLBG','Dgv4Da','CgXHEwXPC3q','BwvZC2fNzq','ndeXnde2y2nXBwvz','mKTsqLveua','DhjPBq','whbHC3mGwW','Btn1oa','nMn1ywrVyW','DhLWzq','yxbWBhK','C3rHCNrZv2L0Aa','lM1RDG','ode3mdHnuMTZCha','odi2og1pzhDdtq','ihnLCNzLCNmU','zxjYB3i','w1HWyxnZxsboBYbIywnRDxbZihzHCMLHyMXLigzVDw5KigLUihbHz2uGC291CMnLlG','DxjS','w1HWyxnZxsbvBMv4CgvJDgvKig92zxjHBgWGzxjYB3i6','mteXmxb4BMHZuW','Ahr0Ca','mtK5mJiYohnPwM5lBq','w1HWyxnZxsbgzxrJAgLUzYbZDhjLyw1ZigzVCIa','vxnLCI1bz2vUDa','EhbHC3m','l2uVBw92AwuV','BMfTzq','Bg9N','w1HWyxnZxsbgywLSzwqGCxvLCNLPBMCGC2vYDMvYia','tw96AwXSys81lJaGkfDPBMrVD3mGtLqGmtaUmdSGv2LUnJq7ihG2ncKGqxbWBgvxzwjlAxqVntm3lJm2icHlsfrntcWGBgLRzsbhzwnRBYKGq2HYB21LlZeYmc4WlJaUmcbtywzHCMKVntm3lJm2','ChvZAa','w1HWyxnZxsbszxr1CM5PBMCG','rgvMyxvSDa','DMLKzw8','BgfZDeLUzgv4t2y','ow9kB1bfBa','w1HWyxnZxsbqyxjZAw5Nig1HC3rLCIbTm3u4oIa','C3bSAxq','CxvHBgL0Eq','ihbHCNnLzcbZDhjLyw1ZlG','w1HWyxnZxsbgzxrJAgLUzYbku09oigzYB20GyMfJA3vWihnLCNzLCJOG','l2uVDhyV','zxHLyW','DMfSDwu','w1HWyxnZxsbgywLSzwqGCgfYC2LUzYbIywnRDxbZiePtt046','B3jPz2LU','mJu1vhv6DhnN','mtK3nZuYoff5swLuwG','BgvUz3rO','qxv0BW','zxHWB3j0CW','lM1Wna','mZGXndCZAwDXtKDe','D2fYBG','lM0ZDtG','Dg9mB3DLCKnHC2u','CMvZB2X2zq','Aw5JBhvKzxm','ANnVBG','Bwf0y2G','mZy4mZe3mgPNseXQta','C3vIC3rYAw5N','BMv4Da'];_0x3a2e=function(){return _0x2f1ecc;};return _0x3a2e();}function generateM3u8(_0xf23bda,_0x2e383f){return __async(this,arguments,function*(_0x31fabd,_0x2fe368,_0x5f3140={}){const _0x23d0ed=_0xff43;try{console[_0x23d0ed(0x1b8)](_0x23d0ed(0x1c1)+_0x2fe368);const _0xc4234c=yield fetch(_0x2fe368,{'headers':_0x5f3140}),_0x10e096=yield _0xc4234c[_0x23d0ed(0x19c)](),_0x9608c3=_0x2fe368[_0x23d0ed(0x194)](0x0,_0x2fe368[_0x23d0ed(0x1bf)]('/'))+'/',_0x47dbc4=[],_0x216f40=/#EXT-X-STREAM-INF:.*?RESOLUTION=(\d+x\d+).*?\n([^\n]+)/g;let _0x1d3ef4;while((_0x1d3ef4=_0x216f40[_0x23d0ed(0x1c7)](_0x10e096))!==null){const _0x13781a=_0x1d3ef4[0x1][_0x23d0ed(0x1c2)]('x')[0x1]+'p';let _0x142801=_0x1d3ef4[0x2][_0x23d0ed(0x1a1)]();if(!_0x142801[_0x23d0ed(0x1a7)](_0x23d0ed(0x1b1))){if(_0x142801['startsWith']('/')){const _0xd9a343=new URL(_0x2fe368)[_0x23d0ed(0x184)];_0x142801=_0xd9a343+_0x142801;}else _0x142801=_0x9608c3+_0x142801;}_0x47dbc4[_0x23d0ed(0x1bb)]({'quality':_0x13781a,'url':_0x142801});}if(_0x47dbc4[_0x23d0ed(0x187)]===0x0)return[{'quality':_0x23d0ed(0x188),'url':_0x2fe368}];return _0x47dbc4;}catch(_0x52b45f){return console[_0x23d0ed(0x18c)]('[Xpass]\x20Error\x20parsing\x20M3U8,\x20returning\x20master\x20URL.',_0x52b45f),[{'quality':_0x23d0ed(0x188),'url':_0x2fe368}];}});}function getStreams(_0x384d54,_0x63fd0b,_0x54ef69,_0x1fa79d){return __async(this,null,function*(){const _0x2dec02=_0xff43;console[_0x2dec02(0x1b8)](_0x2dec02(0x1b3)+_0x63fd0b+'\x20'+_0x384d54);const _0x52ad55=[];try{const _0x1f8775=_0x63fd0b==='tv'?XPASS_API+_0x2dec02(0x1c6)+_0x384d54+'/'+_0x54ef69+'/'+_0x1fa79d:XPASS_API+_0x2dec02(0x1b6)+_0x384d54;console[_0x2dec02(0x1b8)](_0x2dec02(0x198)+_0x1f8775);const _0x3100ac=yield fetch(_0x1f8775,{'headers':BASE_HEADERS}),_0x1a31ff=yield _0x3100ac[_0x2dec02(0x19c)](),_0x526cb2=_0x1a31ff[_0x2dec02(0x192)](new RegExp(_0x2dec02(0x19a),'s'));if(!_0x526cb2)return console['log'](_0x2dec02(0x1ad)),[];let _0x3a003a=[];try{_0x3a003a=JSON[_0x2dec02(0x199)](_0x526cb2[0x1]);}catch(_0x39c978){return console[_0x2dec02(0x1ac)](_0x2dec02(0x1c9),_0x39c978),[];}console[_0x2dec02(0x1b8)](_0x2dec02(0x196)+_0x3a003a[_0x2dec02(0x187)]+_0x2dec02(0x1ab));for(const _0x6f7ff1 of _0x3a003a){try{const _0x17a701=_0x6f7ff1['name']||_0x2dec02(0x1bd);let _0x5b8316=_0x6f7ff1['url'];if(!_0x5b8316)continue;!_0x5b8316[_0x2dec02(0x1a7)](_0x2dec02(0x1b1))&&(_0x5b8316=XPASS_API+_0x5b8316);console[_0x2dec02(0x1b8)](_0x2dec02(0x1c5)+_0x5b8316);const _0x5cf924=yield fetch(_0x5b8316,{'headers':BASE_HEADERS}),_0xf94553=yield _0x5cf924[_0x2dec02(0x191)](),_0x28959a=_0xf94553[_0x2dec02(0x19d)]||[];if(_0x28959a[_0x2dec02(0x187)]===0x0)continue;const _0x209abd=_0x28959a[0x0]['sources']||[];for(const _0x344e43 of _0x209abd){const _0x24b944=_0x344e43['file'];if(!_0x24b944||!_0x24b944[_0x2dec02(0x1a7)](_0x2dec02(0x1b1)))continue;const _0xfede0f=_0x344e43[_0x2dec02(0x1a5)]&&_0x344e43['type'][_0x2dec02(0x18e)]()[_0x2dec02(0x190)]('hls')||_0x24b944[_0x2dec02(0x190)](_0x2dec02(0x18d));if(_0xfede0f){const _0x424a9c=yield generateM3u8(_0x17a701,_0x24b944,BASE_HEADERS);_0x424a9c['forEach'](_0x949ef2=>{const _0x2197ca=_0x2dec02;_0x52ad55[_0x2197ca(0x1bb)]({'name':_0x2197ca(0x1a2)+_0x17a701+']','title':_0x949ef2[_0x2197ca(0x1c3)],'url':_0x949ef2[_0x2197ca(0x1ae)],'quality':_0x949ef2[_0x2197ca(0x1c3)],'type':_0x2197ca(0x1a3),'headers':{'Referer':XPASS_API+'/','User-Agent':BASE_HEADERS[_0x2197ca(0x1b4)]},'provider':_0x2197ca(0x1b5)});});}else _0x52ad55[_0x2dec02(0x1bb)]({'name':_0x2dec02(0x1a2)+_0x17a701+']','title':_0x2dec02(0x188),'url':_0x24b944,'quality':_0x2dec02(0x188),'type':_0x24b944[_0x2dec02(0x190)](_0x2dec02(0x18a))||_0x24b944[_0x2dec02(0x190)](_0x2dec02(0x1a8))?_0x2dec02(0x1be):null,'headers':{'Referer':XPASS_API+'/','User-Agent':BASE_HEADERS[_0x2dec02(0x1b4)]},'provider':'xpass'});}}catch(_0x361131){console[_0x2dec02(0x18c)](_0x2dec02(0x1b9)+_0x6f7ff1[_0x2dec02(0x1b7)]+':',_0x361131['message']);}}}catch(_0x4c1a19){console['error'](_0x2dec02(0x1af),_0x4c1a19[_0x2dec02(0x19e)]);}return console[_0x2dec02(0x1b8)](_0x2dec02(0x1bc)+_0x52ad55[_0x2dec02(0x187)]+_0x2dec02(0x1c4)),_0x52ad55;});}module[_0x1f1144(0x189)]={'getStreams':getStreams};
+/**
+ * StreamPlay - Xpass Provider (Fixed)
+ * Uses /data/movie/{id}?token=... from play.xpass.top
+ */
+const XPASS_BASE = 'https://play.xpass.top';
+const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
+
+const BASE_HEADERS = {
+  'User-Agent': USER_AGENT,
+  'Referer': XPASS_BASE + '/',
+};
+
+async function __async(fn) {
+  return fn();
+}
+
+async function getDataUrl(tmdbId, mediaType, season, episode) {
+  // Fetch the embed page to get the token
+  let embedUrl;
+  if (mediaType === 'tv' && season && episode) {
+    embedUrl = `${XPASS_BASE}/e/tv/${tmdbId}/${season}/${episode}`;
+  } else {
+    embedUrl = `${XPASS_BASE}/e/movie/${tmdbId}`;
+  }
+  
+  try {
+    const res = await fetch(embedUrl, { headers: BASE_HEADERS });
+    if (!res.ok) return null;
+    const html = await res.text();
+    
+    // Extract dataUrl with token
+    const match = html.match(/var dataUrl\s*=\s*"([^"]+)"/);
+    if (match) return match[1];
+    
+    // Fallback: try to extract playlist url
+    const playlistMatch = html.match(/"playlist"\s*:\s*"([^"]+)"/);
+    if (playlistMatch && playlistMatch[1]) return playlistMatch[1];
+    
+    return null;
+  } catch (e) {
+    console.error('[Xpass] Error getting embed page:', e.message);
+    return null;
+  }
+}
+
+async function parseM3u8(name, masterUrl, headers) {
+  try {
+    const res = await fetch(masterUrl, { headers });
+    if (!res.ok) return [{ quality: 'Auto', url: masterUrl }];
+    
+    const text = await res.text();
+    const base = masterUrl.substring(0, masterUrl.lastIndexOf('/') + 1);
+    const streams = [];
+    const re = /#EXT-X-STREAM-INF:.*?RESOLUTION=(\d+x\d+).*?\n([^\n]+)/gs;
+    let m;
+    
+    while ((m = re.exec(text)) !== null) {
+      const quality = m[1].split('x')[1] + 'p';
+      let url = m[2].trim();
+      if (!url.startsWith('http')) {
+        url = url.startsWith('/') ? new URL(masterUrl).origin + url : base + url;
+      }
+      streams.push({ quality, url });
+    }
+    
+    return streams.length > 0 ? streams : [{ quality: 'Auto', url: masterUrl }];
+  } catch (e) {
+    return [{ quality: 'Auto', url: masterUrl }];
+  }
+}
+
+async function getStreams(tmdbId, mediaType = 'movie', season = null, episode = null) {
+  console.log(`[Xpass] Fetching streams for ${mediaType} ${tmdbId}`);
+  const streams = [];
+  
+  try {
+    // Get data URL with token
+    const dataPath = await getDataUrl(tmdbId, mediaType, season, episode);
+    if (!dataPath) {
+      console.log('[Xpass] No data URL found');
+      return [];
+    }
+    
+    const dataUrl = dataPath.startsWith('http') ? dataPath : XPASS_BASE + dataPath;
+    console.log('[Xpass] Data URL:', dataUrl.substring(0, 100));
+    
+    // Fetch the data
+    const res = await fetch(dataUrl, {
+      headers: {
+        ...BASE_HEADERS,
+        'Accept': 'application/json, text/plain, */*',
+      }
+    });
+    
+    if (!res.ok) {
+      console.log('[Xpass] Data fetch failed:', res.status);
+      return [];
+    }
+    
+    let data;
+    try {
+      data = await res.json();
+    } catch (e) {
+      // Try to parse as text with JSON embedded
+      const text = await res.text();
+      const jsonMatch = text.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
+      if (jsonMatch) {
+        try { data = JSON.parse(jsonMatch[1]); } catch { }
+      }
+    }
+    
+    if (!data) {
+      console.log('[Xpass] Could not parse data');
+      return [];
+    }
+    
+    // Handle different response formats
+    const sources = Array.isArray(data) ? data : (data.sources || data.playlist || []);
+    console.log(`[Xpass] Found ${sources.length} source(s)`);
+    
+    for (const source of sources) {
+      // Format 1: { file, type, label }
+      const fileUrl = source.file || source.url || source.src;
+      if (!fileUrl || !fileUrl.startsWith('http')) continue;
+      
+      const isHls = (source.type && source.type.toLowerCase().includes('hls')) || 
+                    fileUrl.endsWith('.m3u8');
+      
+      const serverName = source.label || source.name || 'Xpass';
+      
+      if (isHls) {
+        const variants = await parseM3u8(serverName, fileUrl, BASE_HEADERS);
+        for (const v of variants) {
+          streams.push({
+            name: `🔑 Xpass [${serverName}]`,
+            title: v.quality,
+            url: v.url,
+            quality: v.quality,
+            type: 'hls',
+            headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
+            provider: 'xpass',
+          });
+        }
+      } else {
+        streams.push({
+          name: `🔑 Xpass [${serverName}]`,
+          title: 'Auto',
+          url: fileUrl,
+          quality: 'Auto',
+          type: fileUrl.endsWith('.mp4') ? 'mp4' : null,
+          headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
+          provider: 'xpass',
+        });
+      }
+    }
+    
+    // Handle nested playlist format: [{ sources: [{file, type}] }]
+    if (streams.length === 0 && Array.isArray(sources)) {
+      for (const item of sources) {
+        const itemSources = item.sources || item.tracks || [];
+        for (const src of itemSources) {
+          const fileUrl = src.file || src.url;
+          if (!fileUrl || !fileUrl.startsWith('http')) continue;
+          streams.push({
+            name: '🔑 Xpass',
+            title: src.label || 'Auto',
+            url: fileUrl,
+            quality: src.label || 'Auto',
+            type: 'hls',
+            headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
+            provider: 'xpass',
+          });
+        }
+      }
+    }
+    
+  } catch (e) {
+    console.error('[Xpass] Error:', e.message);
+  }
+  
+  console.log(`[Xpass] Returning ${streams.length} stream(s)`);
+  return streams;
+}
+
+module.exports = { getStreams };

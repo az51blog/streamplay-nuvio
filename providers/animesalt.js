@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/animesalt/index.js
-var import_cheerio_without_node_native2 = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/animesalt/constants.js
 var MAIN_URL = "https://animesalt.cx";
@@ -177,7 +177,7 @@ function isPlayableStream(stream) {
 }
 
 // src/animesalt/extractors.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 var import_crypto_js = __toESM(require("crypto-js"));
 function extractAwsStream(url) {
   return __async(this, null, function* () {
@@ -314,7 +314,7 @@ function extractMegaPlay(url) {
         if (!pageRes.ok)
           return [];
         const html = yield pageRes.text();
-        const $ = import_cheerio_without_node_native.default.load(html);
+        const $ = cheerio.load(html);
         const embedSrc = $("iframe.s5-embed").attr("src");
         if (!embedSrc)
           return [];
@@ -436,7 +436,7 @@ function searchAnimeSalt(query) {
       const json = yield res.json();
       if (!(json == null ? void 0 : json.success) || !((_a = json == null ? void 0 : json.data) == null ? void 0 : _a.content))
         return [];
-      const $ = import_cheerio_without_node_native2.default.load(json.data.content);
+      const $ = cheerio.load(json.data.content);
       const results = [];
       $("article").each((_, el) => {
         const title = $(el).find("header h2").text().trim();
@@ -484,7 +484,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
         if (!seriesRes.ok)
           return [];
         const seriesHtml = yield seriesRes.text();
-        const $series = import_cheerio_without_node_native2.default.load(seriesHtml);
+        const $series = cheerio.load(seriesHtml);
         let seasonBtn = $series(`div.season-buttons a[data-season="${seasonNum}"]`);
         if (seasonBtn.length === 0) {
           seasonBtn = $series("div.season-buttons a").first();
@@ -503,7 +503,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
           });
           if (epRes.ok) {
             const epHtml = yield epRes.text();
-            const $ep = import_cheerio_without_node_native2.default.load(epHtml);
+            const $ep = cheerio.load(epHtml);
             const epArticles = $ep("li article");
             let targetEp = null;
             epArticles.each((idx, el) => {
@@ -525,7 +525,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
       if (!pageRes.ok)
         return [];
       const pageHtml = yield pageRes.text();
-      const $page = import_cheerio_without_node_native2.default.load(pageHtml);
+      const $page = cheerio.load(pageHtml);
       const iframeUrls = /* @__PURE__ */ new Set();
       $page("iframe").each((_, el) => {
         const src = $page(el).attr("data-src") || $page(el).attr("src");

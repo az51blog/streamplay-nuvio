@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/animepahe/index.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/animepahe/constants.js
 var ANIMEPAHE_DOMAINS = [
@@ -511,7 +511,7 @@ function getStreams(tmdbId, mediaType, season, episode) {
         return [];
       const playUrl = `/play/${animeSession}/${episodeSession}`;
       const playHtml = yield fetchText(playUrl);
-      const $ = import_cheerio_without_node_native.default.load(playHtml);
+      const $ = cheerio.load(playHtml);
       const streams = [];
       const promises = [];
       const seen = /* @__PURE__ */ new Set();

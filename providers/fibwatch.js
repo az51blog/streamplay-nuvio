@@ -1,4 +1,4 @@
-const cheerio = require('cheerio-without-node-native');
+const cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 const DEFAULT_BASE = 'https://fibwatch.art';
 const DOMAIN_LIST = 'https://raw.githubusercontent.com/phisher98/TVVVV/refs/heads/main/domains.json';

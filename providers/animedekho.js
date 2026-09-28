@@ -63,7 +63,7 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/animedekho/index.js
-var import_cheerio_without_node_native2 = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 
 // src/animedekho/constants.js
 var MAIN_URL = "https://animedekho.app";
@@ -177,7 +177,7 @@ function isPlayableStream(stream) {
 }
 
 // src/animedekho/extractors.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
+var cheerio = ((c => { c.default = c; return c; })(require('cheerio')));
 function extractStreamRuby(url) {
   return __async(this, null, function* () {
     try {
@@ -462,7 +462,7 @@ function searchAnimeDekho(query) {
       if (!res.ok)
         return [];
       const html = yield res.text();
-      const $ = import_cheerio_without_node_native2.default.load(html);
+      const $ = cheerio.load(html);
       const results = [];
       $("ul[data-results] li article, article.post, article").each((_, el) => {
         const title = $(el).find("header h2, h2").text().trim();
@@ -515,7 +515,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
         if (!seriesRes.ok)
           return [];
         const seriesHtml = yield seriesRes.text();
-        const $series = import_cheerio_without_node_native2.default.load(seriesHtml);
+        const $series = cheerio.load(seriesHtml);
         let targetEpUrl = null;
         const epElements = $series("ul.seasons-lst li");
         epElements.each((_, el) => {
@@ -550,7 +550,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
       if (!pageRes.ok)
         return [];
       const pageHtml = yield pageRes.text();
-      const $page = import_cheerio_without_node_native2.default.load(pageHtml);
+      const $page = cheerio.load(pageHtml);
       const iframeUrls = /* @__PURE__ */ new Set();
       const serverPromises = [];
       $page("iframe.serversel[src], iframe[src]").each((_, el) => {
@@ -563,7 +563,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
                 if (!r.ok)
                   return;
                 const h = yield r.text();
-                const $inner = import_cheerio_without_node_native2.default.load(h);
+                const $inner = cheerio.load(h);
                 $inner("iframe[src]").each((_2, iEl) => {
                   const iSrc = $inner(iEl).attr("src");
                   if (iSrc && !iSrc.startsWith("about:"))
@@ -590,7 +590,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
               if (!r.ok)
                 return;
               const h = yield r.text();
-              const $tr = import_cheerio_without_node_native2.default.load(h);
+              const $tr = cheerio.load(h);
               const iSrc = $tr("iframe").attr("src");
               if (iSrc && !iSrc.startsWith("about:")) {
                 const full = iSrc.startsWith("//") ? `https:${iSrc}` : iSrc.startsWith("http") ? iSrc : `${MAIN_URL}${iSrc}`;
