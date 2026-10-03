@@ -131,25 +131,34 @@ async function getStreams(tmdbId, mediaType = 'movie', season = null, episode = 
       if (isHls) {
         const variants = await parseM3u8(serverName, fileUrl, BASE_HEADERS);
         for (const v of variants) {
+          const qIcon = v.quality === '2160p' ? '⚡' : v.quality === '1080p' ? '💎' : '🛰️';
+          const card = `🎬 Xpass Stream\n${qIcon} ${v.quality} | 🌍 Original Audio\n📡 M3U8 / HLS | ⛓️‍💥 Xpass [${serverName}]`;
           streams.push({
-            name: `🔑 Xpass [${serverName}]`,
-            title: v.quality,
+            name: `🔑 Xpass | ${v.quality} | ${serverName}`,
+            title: card,
+            size: card,
+            description: card,
             url: v.url,
             quality: v.quality,
             type: 'hls',
             headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
             provider: 'xpass',
+            behaviorHints: { notWebReady: true, proxyHeaders: { request: { Referer: XPASS_BASE + '/' } } }
           });
         }
       } else {
+        const card = `🎬 Xpass Stream\n💎 Auto | 🌍 Original Audio\n🎞️ MP4 | ⛓️‍💥 Xpass [${serverName}]`;
         streams.push({
-          name: `🔑 Xpass [${serverName}]`,
-          title: 'Auto',
+          name: `🔑 Xpass | Auto | ${serverName}`,
+          title: card,
+          size: card,
+          description: card,
           url: fileUrl,
           quality: 'Auto',
           type: fileUrl.endsWith('.mp4') ? 'mp4' : null,
           headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
           provider: 'xpass',
+          behaviorHints: { notWebReady: true, proxyHeaders: { request: { Referer: XPASS_BASE + '/' } } }
         });
       }
     }
@@ -161,14 +170,19 @@ async function getStreams(tmdbId, mediaType = 'movie', season = null, episode = 
         for (const src of itemSources) {
           const fileUrl = src.file || src.url;
           if (!fileUrl || !fileUrl.startsWith('http')) continue;
+          const qualLabel = src.label || 'Auto';
+          const card = `🎬 Xpass Stream\n🛰️ ${qualLabel} | 🌍 Original Audio\n📡 M3U8 / HLS | ⛓️‍💥 Xpass`;
           streams.push({
-            name: '🔑 Xpass',
-            title: src.label || 'Auto',
+            name: `🔑 Xpass | ${qualLabel}`,
+            title: card,
+            size: card,
+            description: card,
             url: fileUrl,
-            quality: src.label || 'Auto',
+            quality: qualLabel,
             type: 'hls',
             headers: { 'Referer': XPASS_BASE + '/', 'User-Agent': USER_AGENT },
             provider: 'xpass',
+            behaviorHints: { notWebReady: true, proxyHeaders: { request: { Referer: XPASS_BASE + '/' } } }
           });
         }
       }

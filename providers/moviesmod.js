@@ -438,7 +438,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
           nextHref = nextHref.substring(nextHref.indexOf("=") + 1);
         }
         if (nextHref) {
-          const streams = yield processModLink(nextHref, targetUrl, quality, mediaType, episodeNum);
+          const streams = yield processModLink(nextHref, targetUrl, quality, mediaType, episodeNum, details);
           allStreams.push(...streams);
         }
       }
@@ -449,7 +449,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
     }
   });
 }
-function processModLink(url, referer, quality, mediaType, episodeNum) {
+function processModLink(url, referer, quality, mediaType, episodeNum, details = {}) {
   return __async(this, null, function* () {
     try {
       const res = yield fetch(url, { headers: __spreadProps(__spreadValues({}, HEADERS), { Referer: referer }) });
@@ -467,23 +467,47 @@ function processModLink(url, referer, quality, mediaType, episodeNum) {
         finalLink = yield bypassHrefli(source);
       }
       const results = [];
+      const mTitle = details.title || "Movie";
+      const mYear = details.year ? ` - (${details.year})` : "";
       if (finalLink && finalLink.includes("driveseed")) {
         const streams = yield extractDriveseedPage(finalLink);
-        results.push(...streams.map((s) => __spreadProps(__spreadValues({}, s), {
-          name: `MoviesMod [${s.name}]`,
-          title: `MoviesMod - ${s.quality} ${s.size ? `[${s.size}]` : ""}`,
-          quality: s.quality || quality,
-          provider: "moviesmod"
-        })));
+        for (const s of streams) {
+          const q = (s.quality || quality || "1080p").replace(/p$/i, "") + "p";
+          const sz = s.size || "";
+          const srv = s.name || "DriveSeed";
+          const qIcon = q.includes("2160") || q.includes("4K") ? "⚡" : q.includes("1080") ? "💎" : "🛰️";
+          const card = `🎬 ${mTitle}${mYear}\n` +
+            `${qIcon} ${q}${sz ? " | 💾 " + sz : ""} | 📼 MKV\n` +
+            `🎥 H.264 | 🌍 Dual-Audio\n` +
+            `⛓️‍💥 ${srv} | 📥 WEB-DL`;
+          results.push(__spreadProps(__spreadValues({}, s), {
+            name: `MoviesMod | ${q} | ${srv}`,
+            title: card,
+            size: card,
+            description: card,
+            quality: q,
+            provider: "moviesmod",
+            behaviorHints: { notWebReady: true, proxyHeaders: { request: { Referer: "https://moviesmod.ai.in/" } } }
+          }));
+        }
       } else if (finalLink && (finalLink.includes("video-seed") || finalLink.includes("video-leech"))) {
         const streamUrl = yield extractVideoSeed(finalLink);
         if (streamUrl) {
+          const q = (quality || "1080p").replace(/p$/i, "") + "p";
+          const qIcon = q.includes("2160") || q.includes("4K") ? "⚡" : q.includes("1080") ? "💎" : "🛰️";
+          const card = `🎬 ${mTitle}${mYear}\n` +
+            `${qIcon} ${q} | 📼 MP4\n` +
+            `🎥 H.264 | 🌍 Dual-Audio\n` +
+            `⛓️‍💥 VideoSeed | 📥 WEB-DL`;
           results.push({
-            name: "MoviesMod [VideoSeed]",
-            title: `MoviesMod - ${quality}`,
+            name: `MoviesMod | ${q} | VideoSeed`,
+            title: card,
+            size: card,
+            description: card,
             url: streamUrl,
-            quality,
-            provider: "moviesmod"
+            quality: q,
+            provider: "moviesmod",
+            behaviorHints: { notWebReady: true, proxyHeaders: { request: { Referer: "https://moviesmod.ai.in/" } } }
           });
         }
       }

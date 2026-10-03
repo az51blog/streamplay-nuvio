@@ -301,6 +301,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
     const tmdbData = yield tmdbRes.json();
     const imdbId = (_a = tmdbData.external_ids) == null ? void 0 : _a.imdb_id;
     const cleanTitle = tmdbData.title || tmdbData.name || "";
+    const releaseYear = (tmdbData.release_date || tmdbData.first_air_date || "").split("-")[0];
     const mainUrl = yield getMainUrl();
     let match = null;
     const findMatch = (hits) => {
@@ -376,10 +377,23 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
           const extracted = yield extractMdrive(link);
           for (const server of extracted) {
             const streams = yield loadExtractor(server, href);
-            allStreams.push(...streams.map((s) => __spreadProps(__spreadValues({}, s), {
-              title: `${cleanTitle} - ${s.name} [${s.quality}p]`,
-              provider: "moviesdrive"
-            })));
+            for (const s of streams) {
+              const q = (s.quality ? String(s.quality).replace(/p$/i, '') : '1080') + 'p';
+              const sz = s.size || '';
+              const srv = s.name || 'Server';
+              const qIcon = q.includes('2160') || q.includes('4k') ? '⚡' : q.includes('1080') ? '💎' : '🛰️';
+              const card = `🎬 ${cleanTitle} - (${releaseYear || ''})\n` +
+                `${qIcon} ${q}${sz ? ' | 💾 ' + sz : ''} | 📼 MKV\n` +
+                `🎥 H.264 | 🌍 Dual-Audio\n` +
+                `⛓️‍💥 ${srv} | 📥 WEB-DL`;
+              allStreams.push(__spreadProps(__spreadValues({}, s), {
+                name: `MoviesDrive | ${q} | ${srv}`,
+                title: card,
+                size: card,
+                description: card,
+                provider: "moviesdrive"
+              }));
+            }
           }
         }
       } else {
@@ -416,10 +430,23 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
               const extracted = yield extractMdrive(epLink);
               for (const server of extracted) {
                 const streams = yield loadExtractor(server, nextHref);
-                allStreams.push(...streams.map((s) => __spreadProps(__spreadValues({}, s), {
-                  title: `${cleanTitle} S${seasonNum}E${episodeNum} - ${s.name} [${s.quality}p]`,
-                  provider: "moviesdrive"
-                })));
+                for (const s of streams) {
+                  const q = (s.quality ? String(s.quality).replace(/p$/i, '') : '1080') + 'p';
+                  const sz = s.size || '';
+                  const srv = s.name || 'Server';
+                  const qIcon = q.includes('2160') || q.includes('4k') ? '⚡' : q.includes('1080') ? '💎' : '🛰️';
+                  const card = `🎬 ${cleanTitle} S${seasonNum}E${episodeNum}\n` +
+                    `${qIcon} ${q}${sz ? ' | 💾 ' + sz : ''} | 📼 MKV\n` +
+                    `🎥 H.264 | 🌍 Dual-Audio\n` +
+                    `⛓️‍💥 ${srv} | 📥 WEB-DL`;
+                  allStreams.push(__spreadProps(__spreadValues({}, s), {
+                    name: `MoviesDrive | ${q} | ${srv}`,
+                    title: card,
+                    size: card,
+                    description: card,
+                    provider: "moviesdrive"
+                  }));
+                }
               }
             }
           }

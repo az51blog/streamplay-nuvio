@@ -113,17 +113,26 @@ async function getStreams(tmdbId, mediaType = 'movie', season = null, episode = 
 
     for (const link of iframes) {
       const isM3u8 = link.includes('.m3u8');
+      const quality = '1080p';
+      const qualityIcon = '💎';
+      const formatStr = isM3u8 ? '📡 M3U8 / HLS' : '🎞️ MP4';
+      const card = `🎬 ${meta.title}${meta.year ? ` (${meta.year})` : ''}\n${qualityIcon} ${quality} | 🌍 Original Audio\n${formatStr} | ⛓️‍💥 HDMovie2 Ultra Stream`;
       streams.push({
-        name: 'StreamPlay - Hdmovie2 Ultra Stream',
-        title: `Hdmovie2 [Ultra Stream V3] ${meta.title} (${meta.year || ''})`,
+        name: `HDMovie2 | ${quality} | Ultra Stream`,
+        title: card,
+        size: card,
+        description: card,
         url: link,
-        quality: '1080p',
-        size: '1080p Ultra HD',
+        quality,
         headers: {
           "Referer": targetLink,
           "User-Agent": HEADERS["User-Agent"]
         },
-        provider: 'hdmovie2'
+        provider: 'hdmovie2',
+        behaviorHints: {
+          notWebReady: true,
+          proxyHeaders: { request: { Referer: targetLink } }
+        }
       });
     }
 

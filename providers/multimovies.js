@@ -167,14 +167,25 @@ async function getStreams(tmdbId, mediaType = 'movie', season = null, episode = 
     for (const iframe of iframes.slice(0, 5)) {
       const embedStreams = await resolveEmbed(iframe);
       for (const url of embedStreams) {
+        const isHls = url.includes('.m3u8');
+        const quality = isHls ? '1080p' : 'HD';
+        const qualityIcon = quality === '1080p' ? '💎' : '🛰️';
+        const formatStr = isHls ? '📡 M3U8 / HLS' : '🎞️ MP4';
+        const card = `🎬 ${meta.title}${meta.year ? ` (${meta.year})` : ''}\n${qualityIcon} ${quality} | 🌍 Multi-Audio\n${formatStr} | ⛓️‍💥 MultiMovies`;
         streams.push({
-          name: 'MultiMovies',
-          title: `MultiMovies | ${meta.title}`,
+          name: `MultiMovies | ${quality} | 🌍 Multi`,
+          title: card,
+          size: card,
+          description: card,
           url,
-          quality: url.includes('.m3u8') ? '1080p' : 'Unknown',
+          quality,
           language: 'multi',
           type: 'hls',
           provider: 'MultiMovies',
+          behaviorHints: {
+            notWebReady: true,
+            proxyHeaders: { request: { Referer: BASE_URL + '/' } }
+          }
         });
       }
     }
