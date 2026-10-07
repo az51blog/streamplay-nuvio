@@ -387,7 +387,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
                 `🎥 H.264 | 🌍 Dual-Audio\n` +
                 `⛓️‍💥 ${srv} | 📥 WEB-DL`;
               allStreams.push(__spreadProps(__spreadValues({}, s), {
-                name: `MoviesDrive | ${q} | ${srv}`,
+                name: `${require('./helpers/richDetails').getInvertedSortTag(require('./helpers/richDetails').getQualityWeight(q))}MoviesDrive | ${q} | ${srv}`,
                 title: card,
                 size: card,
                 description: card,
@@ -440,7 +440,7 @@ function getStreams(tmdbId, mediaType, seasonNum = 1, episodeNum = 1) {
                     `🎥 H.264 | 🌍 Dual-Audio\n` +
                     `⛓️‍💥 ${srv} | 📥 WEB-DL`;
                   allStreams.push(__spreadProps(__spreadValues({}, s), {
-                    name: `MoviesDrive | ${q} | ${srv}`,
+                    name: `${require('./helpers/richDetails').getInvertedSortTag(require('./helpers/richDetails').getQualityWeight(q))}MoviesDrive | ${q} | ${srv}`,
                     title: card,
                     size: card,
                     description: card,

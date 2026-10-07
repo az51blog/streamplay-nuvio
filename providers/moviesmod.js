@@ -481,7 +481,7 @@ function processModLink(url, referer, quality, mediaType, episodeNum, details = 
             `🎥 H.264 | 🌍 Dual-Audio\n` +
             `⛓️‍💥 ${srv} | 📥 WEB-DL`;
           results.push(__spreadProps(__spreadValues({}, s), {
-            name: `MoviesMod | ${q} | ${srv}`,
+            name: `${require('./helpers/richDetails').getInvertedSortTag(require('./helpers/richDetails').getQualityWeight(q))}MoviesMod | ${q} | ${srv}`,
             title: card,
             size: card,
             description: card,

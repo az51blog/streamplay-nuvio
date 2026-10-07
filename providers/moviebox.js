@@ -1,3 +1,20 @@
+
+function getInvertedSortTag(weight, maxVal = 999999) {
+  const norm = Math.max(0, parseInt(weight, 10) || 0);
+  const inv = Math.max(0, maxVal - norm);
+  const bin = inv.toString(2).padStart(20, '0');
+  return bin.split('').map(b => b === '1' ? '\ufeff' : '\u200b').join('');
+}
+
+function getQualityWeight(qStr) {
+  const q = String(qStr || '').toLowerCase();
+  if (q.includes('1080')) return 900000;
+  if (q.includes('2160') || q.includes('4k')) return 800000;
+  if (q.includes('720')) return 700000;
+  if (q.includes('480')) return 600000;
+  if (q.includes('360')) return 500000;
+  return 400000;
+}
 /**
  * moviebox - Built from src/moviebox/
  * Generated: 2026-09-21T13:26:04.396Z
@@ -515,9 +532,15 @@ function getStreamLinks(subjectId, season = 0, episode = 0, mediaTitle = "", med
               const quality = qualNum ? `${qualNum}p` : "Auto";
               const streamId = stream.id || `${item.id}|${season}|${episode}`;
               const subtitles = yield fetchSubtitles(item.id, streamId, item.lang);
+              const qIcon = quality.includes('1080') ? '💎' : (quality.includes('2160') || quality.includes('4k')) ? '⚡' : '🛰️';
+              const langPart = item.lang || 'Original';
+              const card = `🎬 ${mediaTitle}${season > 0 ? ` S${season}E${episode}` : ''} (${langPart})\n${qIcon} ${quality} | 🌍 ${langPart}\n📡 ${formatType} | ⛓️‍💥 MovieBox Direct`;
+              const sortTag = getInvertedSortTag(getQualityWeight(quality));
               allStreams.push({
-                name: "MovieBox",
-                title: `${mediaTitle}${season > 0 ? ` S${season}E${episode}` : ""} (${item.lang}) - ${quality} [${formatType}]`,
+                name: `${sortTag}MovieBox | ${quality} | ${langPart}`,
+                title: card,
+                size: card,
+                description: card,
                 url: finalStreamUrl,
                 quality,
                 headers: __spreadValues({
@@ -547,10 +570,16 @@ function getStreamLinks(subjectId, season = 0, episode = 0, mediaTitle = "", med
                       continue;
                     }
                     const quality = video.resolution ? `${video.resolution}p` : "Auto";
+                    const qIcon = quality.includes('1080') ? '💎' : (quality.includes('2160') || quality.includes('4k')) ? '⚡' : '🛰️';
+                    const langPart = item.lang || 'Fallback';
+                    const card = `🎬 ${mediaTitle}${season > 0 ? ` S${season}E${episode}` : ''} (${langPart})\n${qIcon} ${quality} | 🌍 ${langPart}\n🎞️ MP4 | ⛓️‍💥 MovieBox Fallback`;
+                    const sortTag = getInvertedSortTag(getQualityWeight(quality));
                     allStreams.push({
-                      name: "MovieBox",
-                      title: `${mediaTitle}${season > 0 ? ` S${season}E${episode}` : ""} (${item.lang}) - ${quality} [Fallback]`,
-                      url: video.resourceLink,
+                      name: `${sortTag}MovieBox | ${quality} | ${langPart}`,
+                      title: card,
+                size: card,
+                description: card,
+                url: video.resourceLink,
                       quality,
                       headers: {
                         "Referer": `${API_BASE}/`,
@@ -580,6 +609,9 @@ function getStreamLinks(subjectId, season = 0, episode = 0, mediaTitle = "", med
       "auto": 1
     };
     allStreams.sort((a, b) => {
+      const wa = getQualityWeight(a.quality);
+      const wb = getQualityWeight(b.quality);
+      if (wb !== wa) return wb - wa;
       var _a, _b;
       const qa = qualityRank[(_a = a.quality) == null ? void 0 : _a.toLowerCase()] || 0;
       const qb = qualityRank[(_b = b.quality) == null ? void 0 : _b.toLowerCase()] || 0;
